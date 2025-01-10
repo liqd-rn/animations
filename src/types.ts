@@ -1,10 +1,14 @@
 import React from 'react';
 
-export type AnimationBaseProps<T> =
+export type AnimationAnimatedProperty<T=number> = [ T, T ] |
 {
-    duration    : number
     from        : T
     to          : T
+}
+
+export type AnimationBaseProps =
+{
+    duration    : number
     delay?      : number
     loop?       : boolean
     style?      : React.CSSProperties
