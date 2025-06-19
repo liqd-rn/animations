@@ -1,6 +1,6 @@
 {
   "name": "@liqd-rn/animations",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "",
   "author": "radixxko",
   "license": "MIT",
@@ -18,7 +18,7 @@
     "url": "git+https://github.com/liqd-rn/animations.git"
   },
   "dependencies": {
-    "@liqd-rn/state": "^1.5.9"
+    "@liqd-rn/state": "^1.6.0"
   },
   "peerDependencies": {
     "react": "*",
