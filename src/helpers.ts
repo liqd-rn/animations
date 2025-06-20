@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import { SharedValue } from 'react-native-reanimated';
-import { AnimationAnimatedProperty } from './types';
+import type { SharedValue } from 'react-native-reanimated';
+import type { AnimationAnimatedProperty } from './types';
 
-export function interpolateRange( progress: SharedValue<number>, range: AnimationAnimatedProperty<number> )
+export const interpolateRange = ( progress: SharedValue<number>, range: AnimationAnimatedProperty<number> ) =>
 {
     'worklet';
 
@@ -11,14 +11,14 @@ export function interpolateRange( progress: SharedValue<number>, range: Animatio
         : range.from + progress.value * ( range.to - range.from );
 }
 
-export function interpolateProperty( property: string, progress: SharedValue<number>, range?: AnimationAnimatedProperty<number> )
+export const interpolateProperty = ( property: string, progress: SharedValue<number>, range?: AnimationAnimatedProperty<number> ) =>
 {
     'worklet';
 
     return range ? {[ property ]: interpolateRange( progress, range )} : undefined;
 }
 
-export function animateWithDelay( animate: Function, delay?: number )
+export const animateWithDelay = ( animate: Function, delay?: number ) =>
 {
     useEffect(() => 
     {
