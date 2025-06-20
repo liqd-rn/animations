@@ -15,7 +15,13 @@ export const interpolateProperty = ( property: string, progress: SharedValue<num
 {
     'worklet';
 
-    return range ? {[ property ]: interpolateRange( progress, range )} : undefined;
+    if( !range ){ return undefined }
+
+    return range
+        ? {[ property ]: Array.isArray( range ) 
+            ? range[0] + progress.value * ( range[1] - range[0] )
+            : range.from + progress.value * ( range.to - range.from )}
+        : undefined;
 }
 
 export const animateWithDelay = ( animate: Function, delay?: number ) =>
